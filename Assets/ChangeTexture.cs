@@ -25,17 +25,12 @@ public class ChangeTexture : MonoBehaviour
     public GameObject messi;
 
     public GameObject changeColor;
-    public GameObject customizeButton;
-    public GameObject transformButton;
-    public GameObject animateButton;
-    public GameObject changeModel;
     public GameObject back;
     public GameObject transformList;
     public GameObject messiAnimationList;
     public GameObject ronaldoAnimationList;
     public GameObject rotate;
-    public GameObject scaleDown;
-    public GameObject scaleUp;
+
 
     public GameObject menu;
 
@@ -102,6 +97,62 @@ public class ChangeTexture : MonoBehaviour
 
        
     }
+
+    public void ChangeColor()
+    {
+        if (isMessi == true)
+        {
+            int currentTextureIndex = armColor.IndexOf(originalArmSkin.mainTexture);
+            currentTextureIndex++;
+
+            if (currentTextureIndex >= armColor.Count)
+            {
+                currentTextureIndex = 0;
+            }
+
+            originalArmSkin.mainTexture = armColor[currentTextureIndex];
+
+            int currentFaceTextureIndex = faceColor.IndexOf(originalFaceSkin.mainTexture);
+            currentFaceTextureIndex++;
+
+            if (currentFaceTextureIndex >= faceColor.Count)
+            {
+                currentFaceTextureIndex = 0;
+            }
+
+            originalFaceSkin.mainTexture = faceColor[currentFaceTextureIndex];
+
+            int currentKneeTextureIndex = kneeColor.IndexOf(originalKneeSkin.mainTexture);
+            currentKneeTextureIndex++;
+
+            if (currentKneeTextureIndex >= kneeColor.Count)
+            {
+                currentKneeTextureIndex = 0;
+            }
+
+            originalKneeSkin.mainTexture = kneeColor[currentKneeTextureIndex];
+        }
+
+        else
+        {
+            int currentSuitTextureIndex = suitColor.IndexOf(originalSuitColor.mainTexture);
+            currentSuitTextureIndex++;
+
+            if (currentSuitTextureIndex >= suitColor.Count)
+            {
+                currentSuitTextureIndex = 0;
+            }
+
+            originalSuitColor.mainTexture = suitColor[currentSuitTextureIndex];
+
+        }
+
+
+
+
+
+    }
+
 
     public void Customize()
     {
@@ -398,60 +449,6 @@ public class ChangeTexture : MonoBehaviour
 
 
 
-    public void ChangeColor()
-    {
-        if (isMessi == true)
-        {
-            int currentTextureIndex = armColor.IndexOf(originalArmSkin.mainTexture);
-            currentTextureIndex++;
-
-            if (currentTextureIndex >= armColor.Count)
-            {
-                currentTextureIndex = 0;
-            }
-
-            originalArmSkin.mainTexture = armColor[currentTextureIndex];
-
-            int currentFaceTextureIndex = faceColor.IndexOf(originalFaceSkin.mainTexture);
-            currentFaceTextureIndex++;
-
-            if (currentFaceTextureIndex >= faceColor.Count)
-            {
-                currentFaceTextureIndex = 0;
-            }
-
-            originalFaceSkin.mainTexture = faceColor[currentFaceTextureIndex];
-
-            int currentKneeTextureIndex = kneeColor.IndexOf(originalKneeSkin.mainTexture);
-            currentKneeTextureIndex++;
-
-            if (currentKneeTextureIndex >= kneeColor.Count)
-            {
-                currentKneeTextureIndex = 0;
-            }
-
-            originalKneeSkin.mainTexture = kneeColor[currentKneeTextureIndex];
-        }
-
-        else
-        {
-            int currentSuitTextureIndex = suitColor.IndexOf(originalSuitColor.mainTexture);
-            currentSuitTextureIndex++;
-
-            if (currentSuitTextureIndex >= suitColor.Count)
-            {
-                currentSuitTextureIndex = 0;
-            }
-
-            originalSuitColor.mainTexture = suitColor[currentSuitTextureIndex];
-
-        }
-
-
-
-
-
-    }
-
+   
   
 }
